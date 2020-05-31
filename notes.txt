@@ -1,0 +1,39 @@
+2-JS-basics
+
+2 ways to add javascript
+1) inline script  <script> </script>
+2) external script
+    a) create new js file
+    b) add source code
+    c) add script tag with tag src={file name}
+    preferred method is to have code on external file 
+    - allows us to keep html and js in seperate file
+
+Intro:
+Relationship between html, css, js
+ Html: content (text, images, buttons) - nouns
+ css: presentation (styling, layouts) - adjectives, describes the nouns
+ js: dynamic effects, programming - verb, doing something
+
+ Datatypes
+ Number, string, boolean, 
+ undefined - data type of a variable that does not have a value yet (uninitialized?); declare variable without assignment
+ null - means non-existent, more specific than undefined
+
+dynamic typing - do not have to manually define a data type
+
+convention: camel case 
+rules - cannot start variable with a number
+    - can start with dollar sign or underscore
+    - cannot start with keywords
+
+Variable Mutation and Type Coercion
+type coercion - javascript automatically converts one type to another as it is needed
+variable mutation - change value of a variable? does he mean data type as well?
+
+operators
+associativity - the direction in which operators are executed
+
+Truthy - all values considered true in an if-else statement; all values that are not falsy
+Falsy -  undefined, null, zero, empty string and not a number (NaN)
+  - not exaclty false, but will become false if evaluated in an if-else statement
