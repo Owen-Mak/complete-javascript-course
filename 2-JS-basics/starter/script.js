@@ -117,40 +117,43 @@ John and Mike both play basketball in different teams. In the latest 3 games, Jo
 GOOD LUCK 😀
 */
 
-// var johnData = [89, 120, 103];
-// var mikeData = [116, 94, 123];
-// var maryData = [97, 134, 105];
+var calcAvg = function (data) {
+    var sum = 0;
+    var count = 0;
+    for (val in data){        
+        sum += data[val];
+        count++;
+    }    
+    return sum / count;
+};
 
-// var calcAvg = function (data) {
-//     var sum = 0;
-//     var count = 0;
-//     for (val in data){        
-//         sum += data[val];
-//         count++;
-//     }    
-//     return sum / count;
-// }
+function team(name, scores) {
+    this.name = name;
+    this.scores = scores;
+    this.avg = calcAvg(this.scores)
+}
 
-// var teamData = [
-//     {name : "John", avg : calcAvg(johnData), data : [89, 120, 103]},
-//     {name : "Mike", avg : calcAvg(mikeData), data : [116, 94, 123]},
-//     {name : "Mary", avg : calcAvg(maryData), data : [97, 134, 105]}
-// ];
+var teamArr = new Array();
+teamArr.push (new team("john", [97, 134, 105]));
+teamArr.push (new team("mike", [116, 94, 123]));
+teamArr.push (new team("mary", [97, 134, 105]));
 
-// var winner, tie = false;
-// for (teams in teamData) {
-//     //console.log (avgScores[teams]);
-//     if (!winner || teamData[teams].avg > winner.avg) {
-//         winner = teamData[teams];
-//         tie = false;
-//     }
-//     else if (teamData[teams].avg == winner.avg) {
-//         tie = true;
-//     }
-// }
+console.log("teamArr", teamArr);
 
-// if (!tie)
-//     console.log (`The winner is ${winner.name} and the average is ${winner.avg}`)
-// else 
-//     console.log (`There is a draw.`)
+var winner, tie = false;
+for (teams in teamArr) {
+    //console.log (avgScores[teams]);
+    if (!winner || teamArr[teams].avg > winner.avg) {
+        winner = teamArr[teams];
+        tie = false;
+    }
+    else if (teamArr[teams].avg == winner.avg) {
+        tie = true;
+    }
+}
+
+if (!tie)
+    console.log (`The winner is ${winner.name} and the average is ${winner.avg}`)
+else 
+    console.log (`There is a draw.`)
 
