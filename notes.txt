@@ -37,3 +37,29 @@ associativity - the direction in which operators are executed
 Truthy - all values considered true in an if-else statement; all values that are not falsy
 Falsy -  undefined, null, zero, empty string and not a number (NaN)
   - not exaclty false, but will become false if evaluated in an if-else statement
+
+  statement - does not return anything
+  expression - pieces of code always produce a value;  does not matter how long they are, always returns a value
+
+*************************************
+3-how-JS-works
+where is it used?
+- most typically hosted in a browser; applications that accept javascript input; node js server
+
+javascript engine - program that executes javascript code
+
+code -> parser -> (abstract syntax tree) -> machine code (byte code) -> execute code
+
+execution context -> environments to run javascript (aka box, container); stores variables in which code is executed
+    - contains variable object (VO), scope chain, this variable
+- default context is global execution context (variables and functions not inside of any function)
+- ALL code not inside a function is executed
+
+global object - in a browser, window object; associated with global execution context
+    - anything declared in global object is attached to window object
+
+- each time a new funciton is called , it gets its own execution context
+
+hoisting - act of moving all declarations to the top of the scope; allows variables/functions to be used before they are declared
+    - functions and variables are avaialble and defined before execution phase starts
+    - variables are set as undefined before the execution phase
