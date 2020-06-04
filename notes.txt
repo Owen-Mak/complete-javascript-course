@@ -63,3 +63,24 @@ global object - in a browser, window object; associated with global execution co
 hoisting - act of moving all declarations to the top of the scope; allows variables/functions to be used before they are declared
     - functions and variables are avaialble and defined before execution phase starts
     - variables are set as undefined before the execution phase
+
+creation phase vs execution phase
+creation phase - first scan of all variables and functions;  variables are set as undefined; both accesible
+execution phase - runs line by line of the functions that are called; each called function gets its own execution context
+
+Scoping - where can we access a certain variable?
+    - each new function creates a scope - ONLY NEW FUNCTIONS have scopes
+
+Lexical scoping - a function that is written inside another function gets access to the scope of the outer (parent) function including it's function and variables
+
+Parent scopes do NOT have access to it's children's functions and variables
+NOTE: Execution stack is different from scope chain
+Hence, scope chain is an arrow moving upwards towards the global scope 
+
+This Variable
+- each context gets this variable
+- each execution context contains it
+
+In a regular function call, this points to the global object (ie. window object)
+In a method call (a function attached to an object), this varialbe points to the calling method
+-  this keyword is not assigned a value until a function where it is defined is actually called
