@@ -84,3 +84,15 @@ This Variable
 In a regular function call, this points to the global object (ie. window object)
 In a method call (a function attached to an object), this varialbe points to the calling method
 -  this keyword is not assigned a value until a function where it is defined is actually called
+
+*************************************
+4. JavaScript in the Browser DOM Manipulation and Events
+
+Document Object Model
+- structured representation of HTML Document
+- used to connect the webpage to javascript
+
+Events
+message queue - all events in the browser waiting to be processed
+    - events only start getting processed once execution stack is empty
+event listener - reacts to events and executes code accordingly
