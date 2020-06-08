@@ -96,3 +96,44 @@ Events
 message queue - all events in the browser waiting to be processed
     - events only start getting processed once execution stack is empty
 event listener - reacts to events and executes code accordingly
+
+
+*************************************
+5. Advanced-JS
+"Everything is an object"
+- only thing not objects are primitives (numbers, strings, booleans...)
+
+using constructors as a blueprint
+
+JS is a prototyped based language
+- each object has a prototype property
+- this allows inheritence in objects
+- the prototype property is where we put methods and properties that we want other objects to inherit
+- the Constructor's prototype property is NOT the prototype of the Constructor itself, but it's the prototype of ALL instances that are created through it
+
+Prototype chain - when a method is called, we try to access it in current object
+ - if method is not found, go to the object's prototype property, which is the prototype property of parent
+ - moves up in a prototype chain
+ - null is the only object without prototype, and it is final destination of the search
+
+__proto__ vs prototype:
+__proto__ is the actual object that is used in the lookup chain to resolve methods, etc. 
+prototype is the object that is used to build __proto__ when you create an object with new:
+ 
+Inheritence:
+    - Difference between Object.create() method vs function constructor method:
+    1) Object.create() method builds an object that inherits directly from the first argument passed into .create()
+    2) function constructor inherits from the constructor's prototype property
+
+Primitives vs Objects
+- variables containing primitives actually hold the data itself; each variable hold their own copy of data
+- variables for objects contain a reference to where the object is stored
+
+Functions
+- is an instance of Object type
+- behaves like any other object
+- can be stored in a variable, passed into other functions as an argument
+
+First class function - (From MDN)
+"A programming language is said to have First-class functions when functions in that language are treated like any other variable. 
+For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable."

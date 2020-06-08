@@ -32,15 +32,16 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
                 
         //3. Update the round score IF the rolled number was NOT a 1
         if (dice[0] === 1 || dice[1] === 1) {
+            console.info(`Dice rolled a 1. Switching to next player`);
             //Next player
             nextPlayer();            
         } else if ((dice[0] == 6 && prevRoll[0] == 6) || (dice[1] == 6 && prevRoll[1] == 6)) {  // double 6
-            // lose entire score
-            console.log(`Double 6, Player ${activePlayer} reset to 0`);
+            // lose entire score            
             scores[activePlayer] = 0;
             // Update the UI
             document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
-            nextPlayer();            
+            console.info(`Double 6, Player ${activePlayer} reset to 0`);
+            nextPlayer();                 
         } else {
             //Add score            
             roundScore += dice[0] + dice[1];
