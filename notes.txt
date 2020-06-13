@@ -152,3 +152,11 @@ Module pattern:
 - functions that are private -> only accessible inside of the Module
 - functions that are public -> can be used outside of the module
 - tools: closures and IIFE
+
+Event delegation - used when interacting with DOM
+event bubbling - when event is fired/triggered, exact same event is triggered on all of its parents, one at a time, all the way to root element
+    - parent will know where the event was first fired
+    - this means we can attach event handler on parent element to catch the element
+event delegation - set up the event handler on parent element to make use of event bubbling
+    - use case 1) lots of child elements
+    - use case 2) when we want an event handler attached to an element that is not yet in the DOM
