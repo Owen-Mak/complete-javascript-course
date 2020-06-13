@@ -360,7 +360,7 @@ c) correct answer (I would use a number for this)
         var trivaiQ3 = new Question ("Which of the following best describe coding?", ['Boring','Hard','Fun','Tedious'], 2)
         // 3 - store them in an array
         questionArr = new Array(mathQ1, triviaQ1, triviaQ2, trivaiQ3);
-    }();
+    }(); // IIFE
 
     // 10. Use closure to track the score
     var trackScore = function() {
@@ -381,7 +381,7 @@ c) correct answer (I would use a number for this)
             restart = questionArr[randQNum].logQuestion(scoreTracker);
         }
     }();
-})();
+})(); //IIFE
 
 
 /*

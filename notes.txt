@@ -140,3 +140,15 @@ For example, in such a language, a function can be passed as an argument to othe
 
 Closures:
 An inner function always has access to the variables and parameters of its outer function, even after the outer function has returned
+
+/************* 6. Putting It All Together The Budget App Project **********************/
+
+Modules:
+- keep units of code for a project both cleanly separated and organized
+- encapsulate some data into privacy and expose other data publicly
+
+Module pattern:
+- keep pieces of code that are related inside of separate, independent, and organized units
+- functions that are private -> only accessible inside of the Module
+- functions that are public -> can be used outside of the module
+- tools: closures and IIFE
