@@ -312,7 +312,7 @@ c) correct answer (I would use a number for this)
 */
 
 // 7 - encapsulate the code
-(function() {
+(function() { // use ES6 blocks in future!!
     var questionArr;
     /* 1. function constructor
     *  question - string
@@ -322,34 +322,35 @@ c) correct answer (I would use a number for this)
     function Question(question, inputAns, correctAns) {
         this.question = question;
         this.inputAns = inputAns;
-        this.correctAns = correctAns;
-        this.logQuestion = function (scoreTracker) {
-            console.log(`${this.question}`);
-            for (ansNum in this.inputAns) {
-                console.log (`${ansNum}: ${this.inputAns[ansNum]}`);
-            }
-            // 5. prompt for answer
-            var userAns = prompt("Enter your answer here:");
-            if (userAns != 'exit') {
-                var parsedUserAns = parseInt(userAns);            
-                this.logResult(parsedUserAns, scoreTracker);
-                return true;        
-            } else {
-                console.log ('bye');
-                return false;
-            }
-        };
-        this.logResult = function(parsedUserAns, scoreTracker) {
-            // 6. check answer
-            if (!isNaN(parsedUserAns) && (parsedUserAns == this.correctAns)) {                
-                console.log ("Correct!");
-                scoreTracker(true);
-            } else {                
-                console.log ("Incorrect");
-                scoreTracker(false);
-            }            
-        };
-                
+        this.correctAns = correctAns;                 
+    };
+
+    Question.prototype.logQuestion = function (scoreTracker) {
+        console.log(`${this.question}`);
+        for (ansNum in this.inputAns) {
+            console.log (`${ansNum}: ${this.inputAns[ansNum]}`);
+        }
+        // 5. prompt for answer
+        var userAns = prompt("Enter your answer here:");
+        if (userAns != 'exit') {
+            var parsedUserAns = parseInt(userAns);            
+            this.logResult(parsedUserAns, scoreTracker);
+            return true;        
+        } else {
+            console.log ('bye');
+            return false;
+        }
+    };
+
+    Question.prototype.logResult = function(parsedUserAns, scoreTracker) {
+        // 6. check answer
+        if (!isNaN(parsedUserAns) && (parsedUserAns == this.correctAns)) {                
+            console.log ("Correct!");
+            scoreTracker(true);
+        } else {                
+            console.log ("Incorrect");
+            scoreTracker(false);
+        }            
     };
 
     var generateQuestions = function () {

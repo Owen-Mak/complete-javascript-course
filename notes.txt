@@ -160,3 +160,8 @@ event bubbling - when event is fired/triggered, exact same event is triggered on
 event delegation - set up the event handler on parent element to make use of event bubbling
     - use case 1) lots of child elements
     - use case 2) when we want an event handler attached to an element that is not yet in the DOM
+
+/***********  ES 6 *******************************************************************/
+let - similar to var?? nope, var is function scoped, but let is block scoped
+    - does not get hoisted like var ... temporal dead zone
+const - constants, values we do not want to change; NOTE: const must be used in same block as declaration
